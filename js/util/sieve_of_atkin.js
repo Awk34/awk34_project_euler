@@ -2,10 +2,8 @@
 
 /**
  * @param {Number} limit=1000 - end of the sieve
- * @param {Object} [logger]
- * @param {Function} [logger.log]
  */
-export default function SieveOfAtkin(limit = 1000, logger = {log() {}}) {
+export default function SieveOfAtkin(limit = 1000) {
     let sieve = new Array(limit + 1);
     let limitSqrt = Math.sqrt(limit).toFixed(0);
 
@@ -65,18 +63,6 @@ export default function SieveOfAtkin(limit = 1000, logger = {log() {}}) {
             let x = n * n;
             for(let i = x; i <= limit; i += x) {
                 sieve[i] = false;
-            }
-        }
-    }
-    // put the results to 10x10 blocks
-    for(let i = 0, j = 0; i <= limit; i++) {
-        if(sieve[i]) {
-            logger.log(i);
-            if(++j % 10 == 0) {
-                logger.log();
-            }
-            if(j % 100 == 0) {
-                logger.log();
             }
         }
     }

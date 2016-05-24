@@ -5,6 +5,9 @@ const Logger = winston.Logger;
 const Console = winston.transports.Console;
 import chalk from 'chalk';
 
+// { error: 0, warn: 1, info: 2, verbose: 3, debug: 4, silly: 5 }
+global.logLevel = global.logLevel || 'info';
+
 export default class Euler {
     startTime;
     endTime;
@@ -18,6 +21,7 @@ export default class Euler {
         this.logger = new Logger({
             transports: [
                 new Console({
+                    level: global.logLevel,
                     /**
                      * @returns {String}
                      */
@@ -52,9 +56,32 @@ export default class Euler {
         this.startTime = microtime.now();
     }
 
+    *step() {
+        throw new Error('You need to override this, doofus');
+    }
+
     end() {
         this.endTime = microtime.now();
         this.totalTime = this.endTime - this.startTime;
+    }
+
+    run() {
+        this.start();
+
+        const stepper = this.step();
+
+        let step;
+        do {
+            step = stepper.next();
+            this.verbose(`step: ${step.value}`);
+        } while(!step.done);
+
+        this.end();
+
+        this.info(`Solution: ${step.value}`);
+        this.info(`Took ${this.totalTime}`);
+
+        return step.value;
     }
 
     error(...args) {

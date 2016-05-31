@@ -4,6 +4,8 @@ import winston from 'winston';
 const Logger = winston.Logger;
 const Console = winston.transports.Console;
 import chalk from 'chalk';
+import t from 'exectimer';
+const Tick = t.Tick;
 
 // { error: 0, warn: 1, info: 2, verbose: 3, debug: 4, silly: 5 }
 global.logLevel = global.logLevel || 'info';
@@ -78,8 +80,11 @@ export default class Euler {
 
         this.end();
 
+        let stepTimer = t.timers.step;
+
         this.info(`Solution: ${step.value}`);
-        this.info(`Took ${this.totalTime}`);
+        this.info(`Took ${stepTimer.count()} steps`);
+        this.info(`Took ${stepTimer.parse(stepTimer.duration())}`);
 
         return step.value;
     }

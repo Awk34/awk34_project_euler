@@ -1,6 +1,14 @@
 'use strict';
 require('babel-register');
 
+// const fs = require('fs');
+// const markdownToHtml = require('./js/util/markdownTools').markdownToHtml;
+
+// fs.readFile('./problems/98.md', 'utf8', (err, data) => {
+//     markdownToHtml(data).then(console.log);
+// });
+// return;
+
 global.logLevel = 'info';
 
 // var sieve = require('./js/util/sieve_of_atkin').default;

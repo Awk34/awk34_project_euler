@@ -1,9 +1,26 @@
-export default function() {
-    let total = 0;
+import Euler from './Euler';
+import microtime from 'microtime';
+import t from 'exectimer';
+const Tick = t.Tick;
 
-    for(let n = 1; n < 1000; n++) {
-        if(n % 3 === 0 || n % 5 === 0) total += n;
+export default class Euler1 extends Euler {
+    n = 1;
+    total = 0;
+
+    constructor() {
+        super();
     }
 
-    return total;
+    *step() {
+        for(; this.n < 1000; this.n++) {
+            let tick = new Tick('step');
+            tick.start();
+
+            if(this.n % 3 === 0 || this.n % 5 === 0) this.total += this.n;
+
+            tick.stop();
+            yield this.total;
+        }
+        return this.total;
+    }
 }

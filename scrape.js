@@ -1,3 +1,3 @@
 require('babel-register');
 
-require('./project-euler-scraper')
+require('./scraper');

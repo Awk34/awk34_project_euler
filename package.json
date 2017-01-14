@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scrape": "require('babel-register'); require('./project-euler-scraper');"
+    "scrape": "node scrape"
   },
   "repository": {
     "type": "git",

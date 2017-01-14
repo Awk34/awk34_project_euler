@@ -37,7 +37,7 @@ function permute(array, returnMap = false) {
     }
 
     return r;
-};
+}
 
 const operators = ['+', '-', '*', '/'];
 

@@ -1,5 +1,4 @@
 import Euler from './Euler';
-import microtime from 'microtime';
 import t from 'exectimer';
 const Tick = t.Tick;
 

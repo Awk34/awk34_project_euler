@@ -1,5 +1,10 @@
-'use strict';
-
+/**
+ *
+ * @param m2
+ * @param n
+ * @param x2
+ * @returns {number}
+ */
 export default function quadratic(m2, n, x2) {
     let a = 4 + m2 * m2;
     let b = 2 * m2 * n;

@@ -1,12 +1,12 @@
 'use strict';
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 import _ from 'lodash';
 import Euler from './Euler';
 import t from 'exectimer';
 const Tick = t.Tick;
 import math from 'mathjs';
-import {permute} from './util/array';
+// import {permute} from './util/array';
 
 // CARE = 1296 = 36^2
 // RACE = 9216 = 96^2
@@ -121,7 +121,7 @@ export default class Euler98 extends Euler {
             .value();
 
         this.verbose(wordPairs);
-        
+
         yield wordPairs;
 
         let maxLength = 0;

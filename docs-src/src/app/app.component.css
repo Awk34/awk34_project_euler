@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('~highlightjs/styles/darkula.css');
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+html, body{
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  background: #2b2b2b;
+  color: white;
+  margin: 0;
+}
+
+a.active {
+  background-color: gray;
+}
+
+pre.hljs {
+  border: 1px solid grey;
+  margin: 25px;
+  max-height: 600px;
+  font-size: 14px;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
+}

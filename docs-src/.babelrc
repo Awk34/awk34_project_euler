@@ -1,0 +1,9 @@
+{
+  "presets": [
+    ["env", {
+      "targets": 6.9,
+      "modules": false,
+      "debug": true
+    }]
+  ]
+}

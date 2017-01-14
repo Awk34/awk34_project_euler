@@ -1,7 +1,7 @@
 'use strict';
 import Euler from './Euler';
 import quadratic from './util/quadratic';
-import { decorate } from 'core-decorators';
+// import { decorate } from 'core-decorators';
 import t from 'exectimer';
 const Tick = t.Tick;
 

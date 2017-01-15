@@ -31,12 +31,12 @@ console.log('`Detail` component loaded asynchronously');
         <span>Solution: <code>{{solution}}</code></span>
     </div>
 
-    <span>
-      <a [routerLink]=" ['./child-detail'] ">
-        Child Detail
-      </a>
-    </span>
-    <router-outlet></router-outlet>
+    <!--<span>-->
+      <!--<a [routerLink]=" ['./child-detail'] ">-->
+        <!--Child Detail-->
+      <!--</a>-->
+    <!--</span>-->
+    <!--<router-outlet></router-outlet>-->
   `,
 })
 export class DetailComponent implements OnInit {
@@ -45,6 +45,7 @@ export class DetailComponent implements OnInit {
   duration;
   solution;
   availableProblems = availableProblems;
+  n;
 
   public ngOnInit() {
     console.log('hello `Detail` component');

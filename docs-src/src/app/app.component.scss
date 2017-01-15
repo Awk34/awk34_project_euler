@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('~highlightjs/styles/darkula.css');
-@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import './md-theme.scss';
 
 html, body{
   height: 100%;
@@ -12,6 +12,30 @@ html, body{
   margin: 0;
 }
 
+.title-button {
+  padding: 0 16px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  outline: none;
+}
+.title-button:hover {
+  cursor: pointer;
+}
+
+.secondary-toolbar {
+  background-color: md-color($euler-app-primary, A200);
+  color: white;
+}
+.secondary-toolbar .title {
+  padding: 0 16px;
+}
+
+a {
+  text-decoration: none;
+  color: md-color($euler-app-accent, A200);
+}
 a.active {
   background-color: gray;
 }
@@ -25,4 +49,14 @@ pre.hljs {
 
 code {
   font-family: 'Source Code Pro', monospace;
+}
+
+footer {
+  font-family: 'Raleway', sans-serif;
+  padding: 20px;
+  text-align: right;
+}
+
+.has-solution {
+  background-color: md-color($euler-app-primary, A200);
 }

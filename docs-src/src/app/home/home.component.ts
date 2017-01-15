@@ -5,7 +5,12 @@ import {
 
 import { AppState } from '../app.service';
 import { Title } from './title';
-import { XLargeDirective } from './x-large';
+// import { XLargeDirective } from './x-large';
+
+const availableProblems = require.context('../../../../js', false, /^(.\/)([0-9]+$)/)
+  .keys()
+  .map(s => parseInt(s.replace('./', '')))
+  .sort((a, b) => a - b);
 
 @Component({
   // The selector is what angular internally uses
@@ -24,6 +29,10 @@ import { XLargeDirective } from './x-large';
 export class HomeComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
+  problems = new Array(200).fill(0).map((val, i) => ({
+    n: i + 1,
+    jsSolution: availableProblems.indexOf(i + 1) > -1
+  }));
   // TypeScript public modifiers
   constructor(
     public appState: AppState,

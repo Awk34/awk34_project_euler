@@ -1,1 +1,21 @@
 /*styles for home content only*/
+.problems-list {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.problems-list button {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+
+  border: none;
+  border-radius: 2px;
+}
+
+.js-sol {
+  background: orange;
+}

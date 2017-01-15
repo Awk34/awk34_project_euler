@@ -1,62 +1,30 @@
 import {
   Component,
-  OnInit
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'about',
   styles: [`
   `],
   template: `
-    <h1>About</h1>
-    <div>
-      For hot module reloading run
-      <pre>npm run start:hmr</pre>
+    <md-toolbar class="secondary-toolbar">
+      <span class="title">About</span>
+    </md-toolbar>
+
+    <div style="padding: 40px;">
+      <div style="display: flex; align-items: center; justify-content: space-around;">
+        <span>
+          <img src="/assets/img/portrait_2014.jpg" alt="Andrew Koroluk portrait" style="border-radius: 50%; width: 15rem; flex-grow: 0;">
+        </span>
+        <span>
+          <img src="https://projecteuler.net/profile/Awk34.png" alt="Awk34 Project Euler badge">
+        </span>
+      </div>
+      
+      <br>
+      
+      <span>Hi, I'm <a href="http://andrewk.me">Andrew Koroluk</a>. This site contains the code for my <a href="https://projecteuler.net">Project Euler</a> solutions.</span>
     </div>
-    <div>
-      <h3>
-        patrick@AngularClass.com
-      </h3>
-    </div>
-    <pre>this.localState = {{ localState | json }}</pre>
   `
 })
-export class AboutComponent implements OnInit {
-
-  public localState: any;
-  constructor(
-    public route: ActivatedRoute
-  ) {}
-
-  public ngOnInit() {
-    this.route
-      .data
-      .subscribe((data: any) => {
-        // your resolved data from route
-        this.localState = data.yourData;
-      });
-
-    console.log('hello `About` component');
-    // static data that is bundled
-    // var mockData = require('assets/mock-data/mock-data.json');
-    // console.log('mockData', mockData);
-    // if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
-    this.asyncDataWithWebpack();
-  }
-  private asyncDataWithWebpack() {
-    // you can also async load mock data with 'es6-promise-loader'
-    // you would do this if you don't want the mock-data bundled
-    // remember that 'es6-promise-loader' is a promise
-    setTimeout(() => {
-
-      System.import('../../assets/mock-data/mock-data.json')
-        .then((json) => {
-          console.log('async mockData', json);
-          this.localState = json;
-        });
-
-    });
-  }
-
-}
+export class AboutComponent {}

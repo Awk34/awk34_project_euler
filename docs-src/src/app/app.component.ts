@@ -17,18 +17,21 @@ import { AppState } from './app.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css'
+    'app.component.scss',
+    // './md-theme.scss',
   ],
   template: `
     <md-toolbar [color]="'primary'">
-      <span style="padding: 0 16px;">Project Euler</span>
+      <button class="title-button" [routerLink]="['./home']">
+        Project Euler
+      </button>
       
       <button md-button [routerLink]=" ['./home'] " routerLinkActive="active">
         Home
       </button>
-      <button md-button [routerLink]=" ['./detail'] " routerLinkActive="active">
-        Detail
-      </button>
+      <!--<button md-button [routerLink]=" ['./detail'] " routerLinkActive="active">-->
+        <!--Detail-->
+      <!--</button>-->
       <button md-button [routerLink]=" ['./about'] " routerLinkActive="active">
         About
       </button>
@@ -40,13 +43,13 @@ import { AppState } from './app.service';
       </button>
     </md-toolbar>
 
-    <main style="padding: 20px;">
+    <main>
       <router-outlet></router-outlet>
     </main>
 
     <!--<pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>-->
 
-    <footer style="padding: 20px; text-align: right;">
+    <footer>
       &copy; Andrew Koroluk. All Rights Reserved.
     </footer>
   `

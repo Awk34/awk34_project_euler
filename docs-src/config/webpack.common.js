@@ -39,6 +39,7 @@ const METADATA = {
  */
 module.exports = function (options) {
   isProd = options.env === 'production';
+  METADATA.baseUrl = isProd ? 'https://awk34.github.io/awk34_project_euler/' : '/';
   return {
 
     /*

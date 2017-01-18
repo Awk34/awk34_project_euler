@@ -1,8 +1,10 @@
-project_euler
-=============
+# MOVED
 
-![Project Euler Progress](https://projecteuler.net/profile/Awk34.png)
+This project has moved to these repositories:
 
-All of my Project Euler related programs
-
-Don't judge the code too much. Almost all of these were done during my Junior & Senior years of high school.
+https://github.com/Awk34/euler-viewer
+https://github.com/Awk34/euler-js
+https://github.com/Awk34/euler-paper
+https://github.com/Awk34/euler-java
+https://github.com/Awk34/euler-scraper
+https://github.com/Awk34/euler-rust
